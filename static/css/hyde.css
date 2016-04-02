@@ -115,6 +115,7 @@ a.sidebar-nav-item:focus {
 }
 
 
+
 /* Container
  *
  * Align the contents of the site above the proper threshold with some margin-fu
@@ -222,6 +223,7 @@ a.sidebar-nav-item:focus {
   color: #75b5aa;
 }
 
+h1 { color: #75b5aa; }
 /* Blue */
 .theme-base-0d .sidebar {
   background-color: #6a9fb5;

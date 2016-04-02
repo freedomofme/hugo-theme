@@ -1,13 +1,18 @@
 {{ partial "head.html" . }}
 <body class="{{ .Site.Params.themeColor }}">
 
+{{ $baseurl := .Site.BaseURL }}
 {{ partial "sidebar.html" . }}
 
   <div class="content container">
     <ul class="posts">
         {{ range .Data.Pages }}
         <li>
-          <span><a href="{{ .Permalink }}">{{ .Title }}</a> <time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</time></span>
+          <span><a href="{{ .Permalink }}">{{ .Title }}</a> 
+          	【{{ range .Params.tags }}
+        	&nbsp;<a href="{{ $baseurl }}/tags/{{ . | urlize }}">{{ . }}</a> 
+      				{{ end }}】
+         &nbsp;<time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</time></span>
         </li>
         {{ end }}
     </ul>
