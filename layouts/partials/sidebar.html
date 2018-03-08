@@ -18,7 +18,11 @@
       <li><a href="/">主页</a> </li>
       
       {{ range .Site.Pages.GroupBy "Section" }}
+      {{if eq .Key "categories" }}
+      {{else if eq .Key "tags" }}
+      {{else}}
     <li> <a id=test href="/{{ .Key }}"> {{ .Key }}</a></li>
+    {{ end }}
     {{ end }}
 
       {{ range .Site.Menus.main }}
